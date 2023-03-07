@@ -24,8 +24,8 @@ void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
     double radian = angle/180.0 * M_PI;
-    int diffX = cos(angle) * numPixel;
-    int diffY = -sin(angle) * numPixel;
+    int diffX = cos(radian) * numPixel;
+    int diffY = -sin(radian) * numPixel;
     x += diffX;
     y += diffY;
 }
@@ -41,8 +41,8 @@ void Painter::jumpBackward(int numPixel)
 {
     // TODO: jump the painter backward
     double radian = angle/180.0 * M_PI;
-    int diffX = cos(angle) * numPixel;
-    int diffY = -sin(angle) * numPixel;
+    int diffX = cos(radian) * numPixel;
+    int diffY = -sin(radian) * numPixel;
     x -= diffX;
     y -= diffY;
 }
