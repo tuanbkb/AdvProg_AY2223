@@ -3,6 +3,6 @@
 
 std::string printGameOver(){
 	// TODO: Return the required string
-	return "Game Over!";
-	//test again the local branch
+	std::string line = "Game Over!";
+	return line;
 }
