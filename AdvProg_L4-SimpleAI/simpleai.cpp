@@ -46,6 +46,7 @@ char nextCharWhenWordIsNotInDictionary(const set<char>& selectedChars)
 {
     char answer;
     //Write your code here
+    //something something
     return answer;
 }
 
@@ -86,12 +87,17 @@ char findMostFrequentChar(const map<char, int>& occurrences, const set<char>& se
     char answer;
     //Write your code here
     int max = 0;
-    for (set<char>::iterator it = selectedChars.begin(); it != selectedChars.end(); it++) {
-        char x = *it;
-        int count = occurrences.find(x)->second;
-        if (count > max) {
-            answer = x;
-            max = count;
+    map<char, int> mymap = occurrences;
+    map<char, int>::iterator it;
+    set<char>::iterator that;
+    for (that = selectedChars.begin(); that != selectedChars.end(); that++) {
+        it = mymap.find(*that);
+        mymap.erase(it);
+    }
+    for (it = mymap.begin(); it != mymap.end(); it++) {
+        if (max < it->second) {
+            max = it->second;
+            answer = it->first;
         }
     }
     return answer;
@@ -157,7 +163,7 @@ bool isWholeWord(const string& mask)
      bool answer = true;
     //Write your code here
     for (int i = 0; i < mask.length(); i++) {
-        if (mask[i] == '_') {
+        if (mask[i] == '_' || mask[i] == '-') {
             answer = false;
             break;
         }
