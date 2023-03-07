@@ -23,7 +23,7 @@ void Painter::setColor(SDL_Color color)
 void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
-    double radian = angle/180.0 * 3.14;
+    double radian = angle/180.0 * M_PI;
     int diffX = cos(angle) * numPixel;
     int diffY = -sin(angle) * numPixel;
     x += diffX;
@@ -40,7 +40,7 @@ void Painter::jumpForward(int numPixel)
 void Painter::jumpBackward(int numPixel)
 {
     // TODO: jump the painter backward
-    double radian = angle/180.0 * 3.14;
+    double radian = angle/180.0 * M_PI;
     int diffX = cos(angle) * numPixel;
     int diffY = -sin(angle) * numPixel;
     x -= diffX;
